@@ -1,15 +1,16 @@
 import './App.css';
-// import About from './components/About';
+//1
+import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, {useState} from 'react'
 import Alert from './components/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-//   Link
-// } from "react-router-dom";
+//2
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 
 function App() {
@@ -51,24 +52,31 @@ function App() {
     <>    
     {/* <Navbar title="Textutils" aboutText="About TextUtils" /> */}
     {/* <Navbar/> */}
-    {/* <Router> */}
+    {/*                     3                          */}
+    <Router>
     <Navbar title="Textutils" mode={mode} toggleMode={toggleMode} />
     <Alert alert={alert}/>
     <div className="container my-3"> 
-    {/* <Routes> */}
+    {/*                     4                           */}
+    <Routes>
       {/* Exact is useed to get exact file. React select the file partially. */}
-          {/* <Route exact path="/about" element={<About />} /> */}
+      {/*                   5-2                           */}
+          <Route exact path="/about" element={<About mode={mode}/>} /> 
+          <Route exact path="/" element={<TextForm heading="Try TextUtils - Word Counter, Character Counter, Remove extra spaces" showAlert={showAlert} mode={mode}/>} />
           {/* <Route path="/about">
             <About/>
           </Route>
           <Route path="/">
           <TextForm heading="Enter the text to analyze below" showAlert={showAlert} mode={mode}/>
-          </Route> */}
-          {/* <Route exact path="/" element={<TextForm heading="Enter the text to analyze below" showAlert={showAlert} mode={mode}/>} /> */}
-          <TextForm heading="Enter the text to analyze below" showAlert={showAlert} mode={mode}/>
-    {/* </Routes>           */}
+          </Route> */}       
+
+          {/* Add when github pages */}
+          {/* <TextForm heading="Enter the text to analyze below" showAlert={showAlert} mode={mode}/> */}
+
+
+    </Routes>          
     </div>
-    {/* </Router> */}
+    </Router>
     </>
   );
 }
