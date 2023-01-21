@@ -1,16 +1,16 @@
 import './App.css';
 //1
-import About from './components/About';
+// import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, {useState} from 'react'
 import Alert from './components/Alert';
 //2
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from "react-router-dom";
 
 
 function App() {
@@ -65,16 +65,16 @@ function App() {
     {/* <Navbar title="Textutils" aboutText="About TextUtils" /> */}
     {/* <Navbar/> */}
     {/*                     3                          */}
-    <Router>
+    {/* <Router> */}
     <Navbar title="Textutils" mode={mode} toggleMode={toggleMode} />
     <Alert alert={alert}/>
     <div className="container my-3"> 
     {/*                     4                           */}
-    <Routes>
+    {/* <Routes> */}
       {/* Exact is useed to get exact file. React select the file partially. */}
       {/*                   5-2                           */}
-          <Route exact path="/about" element={<About mode={mode}/>} /> 
-          <Route exact path="/" element={<TextForm heading="Try TextUtils - Word Counter, Character Counter, Remove extra spaces" showAlert={showAlert} mode={mode}/>} />
+          {/* <Route exact path="/about" element={<About mode={mode}/>} /> 
+          <Route exact path="/" element={<TextForm heading="Try TextUtils - Word Counter, Character Counter, Remove extra spaces" showAlert={showAlert} mode={mode}/>} /> */}
           {/* <Route path="/about">
             <About/>
           </Route>
@@ -83,12 +83,12 @@ function App() {
           </Route> */}       
 
           {/* Add when github pages */}
-          {/* <TextForm heading="Enter the text to analyze below" showAlert={showAlert} mode={mode}/> */}
+          <TextForm heading="Enter the text to analyze below" showAlert={showAlert} mode={mode}/>
 
 
-    </Routes>          
+    {/* </Routes>           */}
     </div>
-    </Router>
+    {/* </Router> */}
     </>
   );
 }
